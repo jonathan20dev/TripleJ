@@ -1,0 +1,18 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let acti of this.actividad" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ acti.nombre | uppercase }}</mat-card-title>
+          </mat-card-header>
+          <div class="crop-image">
+            <img src="./../../../../assets/images/actividad.png" alt="">
+          </div>
+          <mat-card-actions>
+            <a mat-raised-button [routerLink]="['/clients', acti.nombre]">Modificar</a>
+            <button  mat-raised-button color="primary">Eliminar</button>
+          </mat-card-actions>
+          </mat-card>
+    </div>
+  </div>
+

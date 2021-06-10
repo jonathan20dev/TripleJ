@@ -1,0 +1,31 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let abon of this.abono" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{"Referencia de Abono: " + abon.referencia }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Monto: " + abon.monto }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Saldo Restante: "+ abon.saldoRestante}}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Forma de Pago: " + abon.formaPago }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Doc. de Referencia: " + abon.docReferencia }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Fecha: " + abon.fecha }}</mat-card-subtitle>
+            <mat-card-subtitle>{{"Hora: " + abon.hora }}</mat-card-subtitle>
+          </mat-card-header>
+          </mat-card>
+    </div>
+  </div>

@@ -1,0 +1,17 @@
+<!--GRAND D-->
+<div class="padre">
+  <div *ngFor="let sucur of this.sucursal" class="divCliente" >
+        <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ sucur.nombre }}</mat-card-title>
+        </mat-card-header>
+        <div class="crop-image">
+          <img src="./../../../../assets/images/sucursal.png" alt="">
+        </div>
+        <mat-card-actions>
+          <a mat-raised-button >Modificar</a>
+          <button  mat-raised-button color="primary">Eliminar</button>
+        </mat-card-actions>
+        </mat-card>
+  </div>
+</div>

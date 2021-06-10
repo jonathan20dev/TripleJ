@@ -1,0 +1,19 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let audi of this.auditor" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ audi.nombre }}</mat-card-title>
+            <mat-card-subtitle>{{'cédula: ' + audi.id }}</mat-card-subtitle>
+          </mat-card-header>
+          <div class="crop-image">
+            <img src="./../../../../assets/images/auditora.png" alt="">
+          </div>
+          <mat-card-actions>
+            <a mat-raised-button>Modificar</a>
+            <button  mat-raised-button color="primary">Eliminar</button>
+          </mat-card-actions>
+          </mat-card>
+    </div>
+  </div>
+  

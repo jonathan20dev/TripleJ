@@ -1,0 +1,23 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let audi of this.auditoria" class="divCliente" >
+          <mat-card>
+          <mat-card-header> 
+            <mat-card-title> <span>Fecha:</span> {{ audi.fechaCreacion | uppercase }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-header>
+            <mat-card-title> <span>Auditor:</span> {{ audi.idAuditor }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-header>
+            <mat-card-title> <span>Cuenta:</span> {{ audi.codigoCuenta }}</mat-card-title>
+          </mat-card-header>
+          <div class="crop-image">
+            <img src="./../../../../assets/images/auditoria.png" alt="">
+          </div>
+          <mat-card-actions>
+            <a mat-raised-button [routerLink]="'/clients'">Modificar</a>
+            <button  mat-raised-button color="primary">Eliminar</button>
+          </mat-card-actions>
+          </mat-card>
+    </div>
+  </div>

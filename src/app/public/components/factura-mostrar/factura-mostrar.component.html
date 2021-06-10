@@ -1,0 +1,73 @@
+<div class="padre">
+<div *ngFor="let factu of this.factura" class="divCliente" >
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 body-main">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4"> <img class="img" alt="Invoce Template" src="http://pngimg.com/uploads/shopping_cart/shopping_cart_PNG59.png" /> </div>
+                        <div class="col-md-8 text-right">
+                            <h4 style="color: #F81D2D;"><strong>Triple J</strong></h4>
+                            <p>Teléfono: (506) 8833-9090</p>
+                            <p>Correo: triplej@gmail.com</p>
+                            <p>{{"Sucursal: " + factu.codigoSucursal}}</p>
+                        </div>
+                    </div> <br />
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2>FACTURA</h2>
+                            <h3>{{factu.tipo}}</h3>
+                        </div>
+                    </div> <br />
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <h3>Descripción</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Monto</h3>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-9">{{ factu.notas }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">
+                                        <p> <strong>Monto Bruto:</strong> </p>
+                                        <p> <strong>Monto de Impuesto: </strong> </p>
+                                        <p> <strong>Monto de Descuento: </strong> </p>
+                                    </td>
+                                    <td>
+                                        <p> <strong><i class="fas fa-rupee-sign" area-hidden="true"></i> {{factu.montoBruto}} </strong> </p>
+                                        <p> <strong><i class="fas fa-rupee-sign" area-hidden="true"></i> {{factu.montoImpuesto}}</strong> </p>
+                                        <p> <strong><i class="fas fa-rupee-sign" area-hidden="true"></i> {{factu.montoDescuento}} </strong> </p>
+                                    </td>
+                                </tr>
+                                <tr style="color: #F81D2D;">
+                                    <td class="text-right">
+                                        <h4><strong>Total:</strong></h4>
+                                    </td>
+                                    <td class="text-left">
+                                        <h4><strong><i class="fas fa-rupee-sign" area-hidden="true"></i> {{factu.montoNeto}} </strong></h4>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="col-md-12">
+                            <p><b>Fecha :</b> {{factu.fecha}}</p> <br />
+                            <p> Cliente : {{factu.codigoCliente}} </p>
+                            <p> <b>CódActividad :</b> {{factu.codigoActividad}} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

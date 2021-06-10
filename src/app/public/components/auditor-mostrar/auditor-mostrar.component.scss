@@ -1,0 +1,19 @@
+.divCliente {
+  padding: 0;
+  border-radius: 20px;
+  margin: 20px 20px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+.padre {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 10px 0;
+}
+
+.divSurveyedInformation {
+  cursor: pointer;
+}

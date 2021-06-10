@@ -1,0 +1,83 @@
+<form [formGroup]="clientForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Crear un Cliente</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre" formControlName="nombre">
+            <mat-error *ngIf="clientForm.controls['nombre'].hasError('required')">
+               Nombre is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Correo</mat-label>
+            <input type="Correo" matInput formControlName="correo" placeholder="Ex. juan@gmail.com">
+            <mat-error *ngIf="clientForm.controls['correo'].hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-icon matSuffix>phone</mat-icon>
+            <input matInput #phonenumber maxlength="12" placeholder="Teléfono" formControlName="telefono">
+            <mat-error *ngIf="clientForm.controls['telefono'].hasError('required')">
+              Telefono is <strong>required</strong>
+              <mat-hint align="end">{{phonenumber.value.length}} / 12</mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Dirección exacta" formControlName="direccion"></textarea>
+            <mat-error *ngIf="clientForm.controls['direccion'].hasError('required')">
+              Dirección is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput #cdis maxlength="3" placeholder="Código Distrito" type="number" formControlName="codDistrito">
+            <mat-error *ngIf="clientForm.controls['codDistrito'].hasError('required')">
+              Código Distrito is <strong>required</strong>
+              <mat-hint align="end">{{cdis.value.length}} / 3</mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput #cedulaa maxlength="11" placeholder="Cédula" formControlName="cedula">
+            <mat-error *ngIf="clientForm.controls['cedula'].hasError('required')">
+              Cédula is <strong>required</strong>
+              <mat-hint align="end">{{cedulaa.value.length}} / 12</mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput #actividadd maxlength="3" placeholder="Código Actividad" type="number" formControlName="actividad">
+            <mat-error *ngIf="clientForm.controls['actividad'].hasError('required')">
+              Actividad is <strong>required</strong>
+              <mat-hint align="end">{{actividadd.value.length}} / 12</mat-hint>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit"
+      (click)="this.validacionBotton()"
+      >Crear Cliente</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+

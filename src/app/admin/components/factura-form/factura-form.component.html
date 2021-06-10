@@ -1,0 +1,132 @@
+<form [formGroup]="facturaForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Crear una Factura</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                  <mat-select placeholder="Tipo" formControlName="actividad">
+                    <mat-option *ngFor="let tipo of Tipos">
+                      {{ tipo.name }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="facturaForm.controls['actividad'].hasError('required')">
+                    Actividad is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <mat-select placeholder="Moneda" formControlName="actividad">
+                    <mat-option *ngFor="let moneda of Monedas">
+                      {{ moneda.name }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="facturaForm.controls['actividad'].hasError('required')">
+                    Actividad is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                  <input matInput #phonenumber maxlength="12" placeholder="Monto Bruto" formControlName="telefono" type="number">
+                  <mat-error *ngIf="facturaForm.controls['telefono'].hasError('required')">
+                    Telefono is <strong>required</strong>
+                    <mat-hint align="end">{{phonenumber.value.length}} / 12</mat-hint>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput #phonenumber maxlength="12" placeholder="Monto Impuesto" formControlName="telefono" type="number">
+              <mat-error *ngIf="facturaForm.controls['telefono'].hasError('required')">
+                Telefono is <strong>required</strong>
+                <mat-hint align="end">{{phonenumber.value.length}} / 12</mat-hint>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!--MONTO 2.0-->
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                  <input matInput #phonenumber maxlength="12" placeholder="Monto Descuento" formControlName="telefono" type="number">
+                  <mat-error *ngIf="facturaForm.controls['telefono'].hasError('required')">
+                    Telefono is <strong>required</strong>
+                    <mat-hint align="end">{{phonenumber.value.length}} / 12</mat-hint>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput #phonenumber maxlength="12" placeholder="Monto Neto" formControlName="telefono" type="number">
+              <mat-error *ngIf="facturaForm.controls['telefono'].hasError('required')">
+                Telefono is <strong>required</strong>
+                <mat-hint align="end">{{phonenumber.value.length}} / 12</mat-hint>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!--MONTOS END-->
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Detalle de la factura" formControlName="direccion"></textarea>
+              <mat-error *ngIf="facturaForm.controls['direccion'].hasError('required')">
+                Dirección is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput #postalCode maxlength="5" placeholder="Fecha" type="number" formControlName="postalCode">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Actividad" formControlName="actividad">
+                <mat-option *ngFor="let actividad of actividades">
+                  {{ actividad.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="facturaForm.controls['actividad'].hasError('required')">
+                Actividad is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput #postalCode maxlength="5" placeholder="Cédula del cliente" type="number" formControlName="postalCode">
+                <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="full-width">
+                <mat-select placeholder="Sucursal" formControlName="actividad">
+                  <mat-option *ngFor="let sucursal of Sucursal">
+                    {{ sucursal.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="facturaForm.controls['actividad'].hasError('required')">
+                  Actividad is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Crear Factura</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  

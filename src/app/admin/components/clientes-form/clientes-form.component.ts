@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Cliente } from 'src/app/core/models/product.model';
 import { DataService } from 'src/app/data.service';
 import Swal from 'sweetalert2'
 
@@ -10,15 +11,7 @@ import Swal from 'sweetalert2'
 })
 export class ClientesFormComponent implements OnInit {
 
-  clientForm = this.fb.group({
-    cedula: ["", Validators.required],  
-    nombre: ["", Validators.required],
-    correo: ["", Validators.required],
-    actividad: ["", Validators.required],
-    telefono: ["", Validators.required],
-    codDistrito: ["", Validators.required],
-    direccion: ["", Validators.required],
-  });
+  
 
 
   hasUnitNumber = false;
@@ -34,10 +27,47 @@ export class ClientesFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  validacionBotton(){
-    console.log("1:"+this.clientForm);
-      
+  async validacionBotton(){
+    const { value: clientValues } = await Swal.fire({
+      focusConfirm: false,
+      confirmButtonText:'Create',
+      preConfirm: () => {
+        return [
+          (<HTMLInputElement>document.getElementById('nombre')).value,
+          (<HTMLInputElement>document.getElementById('correo')).value,
+          (<HTMLInputElement>document.getElementById('telefono')).value,
+          (<HTMLInputElement>document.getElementById('direccion')).value,
+          (<HTMLInputElement>document.getElementById('codDistrito')).value,
+          (<HTMLInputElement>document.getElementById('cedula')).value,
+          (<HTMLInputElement>document.getElementById('actividad')).value
+        ]
+      }
+    })
+    if (clientValues) {
+      Swal.fire(JSON.stringify(clientValues))
+      let nombre = clientValues[0];
+      let correo = clientValues[1];
+      let telefono = clientValues[2];
+      let direccion = clientValues[3];
+      let codDistrito = clientValues[4];
+      let cedula = clientValues[5];
+      let actividad = clientValues[6];
+      if(nombre == "" || correo == "" || telefono == "" || direccion == "" || codDistrito == ""|| cedula == "" || actividad == ""){
+        Swal.fire(`There are empty inputs`);
+      }
+      else{
+        this.add_Client(
+          cedula,
+          nombre,
+          correo,
+          parseInt(actividad),
+          telefono,
+          parseInt(codDistrito),
+          direccion);
+      }
     }
+  }
+
 
 
   add_Client(cedula:string,nombre:string,email:string,actividad:number,telefono:string,codDistrito:number,detalledir:string){

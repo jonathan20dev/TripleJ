@@ -3,5 +3,7 @@ export interface Cliente {
     nombre: string;
     email: string;
     codigoActividad: number;
-    codigoDireccion: number;
+    telefono: string;
+    codigoDistrito: number;
+    detalledir:string;
 }

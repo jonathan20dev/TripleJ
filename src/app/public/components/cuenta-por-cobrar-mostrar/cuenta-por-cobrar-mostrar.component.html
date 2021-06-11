@@ -1,0 +1,29 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let cxc of this.cuentaXcobrar" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{"Cliente: " + cxc.cliente }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Cédula: " + cxc.cedula }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Monto: "+ cxc.monto}}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"plazo: " + cxc.plazo }} <span>meses</span> </mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Fecha de Vencimiento: " + cxc.fechaVencimiento | slice:0:32}}</mat-card-subtitle>
+            <mat-card-subtitle>{{"Número de Factura: " + cxc.numeroFactura }}</mat-card-subtitle>
+            <mat-card-subtitle>{{"CxC. Código: " + cxc.codigo }}</mat-card-subtitle>
+          </mat-card-header>
+          </mat-card>
+    </div>
+  </div>
+

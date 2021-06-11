@@ -1,0 +1,19 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let canto of this.cantones" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ canto.nombre }}</mat-card-title>
+            <mat-card-subtitle>{{'Código Cantón: ' + canto.codigo }}</mat-card-subtitle>
+            <mat-card-subtitle>{{'Código Provincia: ' + canto.codigoProvincia }}</mat-card-subtitle>
+          </mat-card-header>
+          <div class="crop-image">
+            <img src="./../../../../assets/images/cantones.png" alt="">
+          </div>
+          <mat-card-actions>
+            <a >Modificar</a>
+            <button  mat-raised-button color="primary">Eliminar</button>
+          </mat-card-actions>
+          </mat-card>
+    </div>
+  </div>

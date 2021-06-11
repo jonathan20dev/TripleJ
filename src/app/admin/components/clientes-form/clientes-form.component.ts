@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Cliente } from 'src/app/core/models/product.model';
+import { Cliente } from 'src/app/core/models/cliente.model';
 import { DataService } from 'src/app/data.service';
 import Swal from 'sweetalert2'
 
@@ -12,7 +12,6 @@ import Swal from 'sweetalert2'
 export class ClientesFormComponent implements OnInit {
 
   
-
 
   hasUnitNumber = false;
 
@@ -46,28 +45,31 @@ export class ClientesFormComponent implements OnInit {
     if (clientValues) {
       Swal.fire(JSON.stringify(clientValues))
       let nombre = clientValues[0];
-      let correo = clientValues[1];
+      let email = clientValues[1];
       let telefono = clientValues[2];
       let direccion = clientValues[3];
       let codDistrito = clientValues[4];
       let cedula = clientValues[5];
       let actividad = clientValues[6];
-      if(nombre == "" || correo == "" || telefono == "" || direccion == "" || codDistrito == ""|| cedula == "" || actividad == ""){
-        Swal.fire(`There are empty inputs`);
+      console.log(clientValues);
+      if(nombre == "" || email == "" || telefono == "" || direccion == "" || codDistrito == ""|| cedula == "" || actividad == ""){
+        Swal.fire(`No pueden haber elementos vacios`);
       }
       else{
-        this.add_Client(
+        this.dataService.add_Client(
           cedula,
           nombre,
-          correo,
+          email,
           parseInt(actividad),
           telefono,
           parseInt(codDistrito),
-          direccion);
+          direccion)
+          .subscribe(cliente => {
+          console.log(cliente)
+          })
       }
     }
   }
-
 
 
   add_Client(cedula:string,nombre:string,email:string,actividad:number,telefono:string,codDistrito:number,detalledir:string){

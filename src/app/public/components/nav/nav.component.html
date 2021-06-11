@@ -5,13 +5,28 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/mostrar/sucursal"><mat-icon class="color">account_balance</mat-icon>Sucursal</a>
-      <a mat-list-item routerLink="/mostrar/cliente"><mat-icon class="color">face</mat-icon>Clientes</a>
-      <a mat-list-item routerLink="/mostrar/auditor"><mat-icon class="color"> person_pin</mat-icon>Auditor</a>
+      <a mat-list-item routerLink="/mostrar/sucursal"><mat-icon class="color">account_balance</mat-icon>Sucursales</a>
       <a mat-list-item routerLink="/mostrar/actividad"><mat-icon class="color"> local_activity</mat-icon>Actividades</a>
-      <a mat-list-item routerLink="/mostrar/factura"><mat-icon class="color"> format_align_left</mat-icon>Factura	</a>
-      <a mat-list-item routerLink="/mostrar/auditoria"><mat-icon class="color">remove_red_eye</mat-icon>Auditoria </a>
-      <a mat-list-item routerLink="/mostrar/abono"><mat-icon class="color"> attach_money</mat-icon> Abonos </a>
+      
+      <a mat-list-item routerLink="/mostrar/cliente"><mat-icon class="color">face</mat-icon>Clientes</a>
+      <a mat-list-item routerLink="/mostrar/telefono"><mat-icon class="color"> contact_phone</mat-icon>Teléfonos</a>
+      <a mat-list-item routerLink="/mostrar/direccion_cliente"><mat-icon class="color"> map</mat-icon>Direcciones</a>
+
+      <a mat-list-item routerLink="/mostrar/factura"><mat-icon class="color"> format_align_left</mat-icon>Facturas</a>
+      <a mat-list-item routerLink="/mostrar/notas_credito"><mat-icon class="color"> account_balance_wallet</mat-icon>Notas de Crédito</a>
+      <a mat-list-item routerLink="/mostrar/notas_debito"><mat-icon class="color"> account_balance_wallet</mat-icon>Notas de Débito</a>
+      <a mat-list-item routerLink="/mostrar/cuenta_x_cobrar"><mat-icon class="color"> collections_bookmark</mat-icon>Cuentas por Cobrar</a>
+      <a mat-list-item routerLink="/mostrar/abono"><mat-icon class="color"> payment</mat-icon> Abonos </a>
+
+      <a mat-list-item routerLink="/mostrar/auditoria"><mat-icon class="color">remove_red_eye</mat-icon>Auditorias </a>
+      <a mat-list-item routerLink="/mostrar/auditor"><mat-icon class="color"> person_pin</mat-icon>Auditores</a>
+      
+      <a mat-list-item routerLink="/mostrar/moneda"><mat-icon class="color"> attach_money</mat-icon>Monedas</a>
+
+      <a mat-list-item routerLink="/mostrar/provincia"><mat-icon class="color"> place</mat-icon>Provincias</a>
+      <a mat-list-item routerLink="/mostrar/canton"><mat-icon class="color"> pin_drop</mat-icon>Cantones</a>
+      <a mat-list-item routerLink="/mostrar/distrito"><mat-icon class="color"> person_pin_circle</mat-icon>Distritos</a>
+      
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

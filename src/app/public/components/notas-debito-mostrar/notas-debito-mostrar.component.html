@@ -1,0 +1,32 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let debito of this.notaDebito" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{"Cliente: " + debito.cliente }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Tipo de Nota: " + debito.tipo }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Monto: "+ debito.monto}}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Saldo Restante: " + debito.saldoRestante }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Detalle: " + debito.notas }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Fecha: " + debito.fecha | slice:0:17 }}</mat-card-subtitle>
+            <mat-card-subtitle>{{"Número de Documento: " + debito.numeroDocumento }}</mat-card-subtitle>
+            <mat-card-subtitle>{{"Número de Factura: " + debito.numeroFactura }}</mat-card-subtitle>
+          </mat-card-header>
+          </mat-card>
+    </div>
+  </div>

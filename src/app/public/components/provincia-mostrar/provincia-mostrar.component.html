@@ -1,0 +1,18 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let provi of this.provincias" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ provi.nombre }}</mat-card-title>
+            <mat-card-subtitle>{{'Código: ' + provi.codigo }}</mat-card-subtitle>
+          </mat-card-header>
+          <div class="crop-image">
+            <img src="./../../../../assets/images/provincia.png" alt="">
+          </div>
+          <mat-card-actions>
+            <a >Modificar</a>
+            <button  mat-raised-button color="primary">Eliminar</button>
+          </mat-card-actions>
+          </mat-card>
+    </div>
+  </div>

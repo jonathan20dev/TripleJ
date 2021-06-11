@@ -1,0 +1,30 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let dir of this.direccionCliente" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{"Cliente: " + dir.nombreCliente }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Cédula: " + dir.cedula }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Provincia: "+ dir.provinciaNombre}}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Cantón: " + dir.cantonNombre }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Distrito: " + dir.distritoNombre }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Detalle: " + dir.detalle }}</mat-card-subtitle>
+          </mat-card-header>
+          </mat-card>
+    </div>
+  </div>

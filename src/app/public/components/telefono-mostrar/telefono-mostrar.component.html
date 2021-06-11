@@ -1,0 +1,21 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let telef of this.telefono" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ telef.nombre }}</mat-card-title>
+            <mat-card-subtitle>{{'cedula: ' + telef.cliente }}</mat-card-subtitle>
+          </mat-card-header>
+          <div class="crop-image">
+            <img src="./../../../../assets/images/telefono.png" alt="">
+          </div>
+          <mat-card-content>
+            <p>Teléfono: {{ telef.numero}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <a >Modificar</a>
+            <button  mat-raised-button color="primary">Eliminar</button>
+          </mat-card-actions>
+          </mat-card>
+    </div>
+  </div>

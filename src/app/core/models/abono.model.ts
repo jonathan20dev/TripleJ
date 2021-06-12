@@ -1,9 +1,6 @@
 export interface Abono {
-    referencia: number;
+    factura: number;
     monto: number;
-    saldoRestante: number;
     formaPago: string;
     docReferencia: string;
-    fecha: string;
-    hora: number;
 }

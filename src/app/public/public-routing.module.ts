@@ -19,6 +19,7 @@ import { MonedaMostrarComponent } from './components/moneda-mostrar/moneda-mostr
 import { ProvinciaMostrarComponent } from './components/provincia-mostrar/provincia-mostrar.component';
 import { CantonMostrarComponent } from './components/canton-mostrar/canton-mostrar.component';
 import { DistritoMostrarComponent } from './components/distrito-mostrar/distrito-mostrar.component';
+import { VerModAuditoriasMostrarComponent } from './components/ver-mod-auditorias-mostrar/ver-mod-auditorias-mostrar.component';
 
 const routes: Routes = [
   {
@@ -88,6 +89,10 @@ const routes: Routes = [
       {
         path: 'distrito',
         component: DistritoMostrarComponent
+      },
+      {
+        path: 'ver_modificaciones',
+        component: VerModAuditoriasMostrarComponent
       },
       {
         path: '',

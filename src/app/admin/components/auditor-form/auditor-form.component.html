@@ -1,35 +1,29 @@
-<form [formGroup]="aditorForm" novalidate (ngSubmit)="onSubmit()">
-    <mat-card class="shipping-card">
-      <mat-card-header>
-        <mat-card-title>Crear un Auditor</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="row">
-          <div class="col">
-            <mat-form-field class="full-width">
-              <input matInput placeholder="Nombre" formControlName="nombre">
-              <mat-error *ngIf="aditorForm.controls['nombre'].hasError('required')">
-                 Nombre is <strong>required</strong>
-              </mat-error>
-  
-            </mat-form-field>
-          </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <mat-form-field class="full-width">
-                  <input matInput #cedulaa maxlength="5" placeholder="Cédula" type="number" formControlName="cedula">
-                  <mat-error *ngIf="aditorForm.controls['cedula'].hasError('required')">
-                    Cédula is <strong>required</strong>
-                    <mat-hint align="end">{{cedulaa.value.length}} / 12</mat-hint>
-                  </mat-error>
-                </mat-form-field>
-              </div>
-        </div>
-       
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary" type="submit">Submit</button>
-      </mat-card-actions>
-    </mat-card>
-  </form>
+<mat-card class="shipping-card">
+  <mat-card-header>
+    <mat-card-title>Agregar un Auditor</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-icon matSuffix>Nombre</mat-icon>
+          <input matInput  maxlength="50" placeholder="Nombre" id="nombre">
+          
+        </mat-form-field>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput  maxlength="11" placeholder="Cédula" id="cedula">          
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="submit"
+    (click)="this.validacionBotton()"
+    >Crear Auditor</button>
+  </mat-card-actions>
+</mat-card>

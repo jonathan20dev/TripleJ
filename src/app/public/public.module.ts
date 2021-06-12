@@ -36,7 +36,8 @@ import { CuentaPorCobrarMostrarComponent } from './components/cuenta-por-cobrar-
 import { MonedaMostrarComponent } from './components/moneda-mostrar/moneda-mostrar.component';
 import { ProvinciaMostrarComponent } from './components/provincia-mostrar/provincia-mostrar.component';
 import { CantonMostrarComponent } from './components/canton-mostrar/canton-mostrar.component';
-import { DistritoMostrarComponent } from './components/distrito-mostrar/distrito-mostrar.component'; 
+import { DistritoMostrarComponent } from './components/distrito-mostrar/distrito-mostrar.component';
+import { VerModAuditoriasMostrarComponent } from './components/ver-mod-auditorias-mostrar/ver-mod-auditorias-mostrar.component'; 
 
 @NgModule({
   declarations: [NavComponent, DashboardComponent,
@@ -44,7 +45,8 @@ import { DistritoMostrarComponent } from './components/distrito-mostrar/distrito
       FacturaMostrarComponent, AuditoriaMostrarComponent, ClienteMostrarComponent,
        AbonoMostrarComponent, TelefonoMostrarComponent, DireccionClienteMostrarComponent,
         NotasDebitoMostrarComponent, NotasCreditoMostrarComponent, CuentaPorCobrarMostrarComponent,
-         MonedaMostrarComponent, ProvinciaMostrarComponent, CantonMostrarComponent, DistritoMostrarComponent],
+         MonedaMostrarComponent, ProvinciaMostrarComponent, CantonMostrarComponent, DistritoMostrarComponent,
+          VerModAuditoriasMostrarComponent],
   imports: [
     CommonModule,
     PublicRoutingModule,

@@ -65,7 +65,7 @@ export class ClientesFormComponent implements OnInit {
           parseInt(codDistrito),
           direccion)
           .subscribe(cliente => {
-          console.log(cliente)
+          
           })
       }
     }

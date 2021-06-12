@@ -17,6 +17,7 @@ import { Provincia } from './core/models/provincia.model';
 import { Moneda } from './core/models/moneda.model';
 import { CuentaXCobrar } from './core/models/cuentaxCobrar.model';
 import { Distrito } from './core/models/distrito.model';
+import { VerModAuditoria } from './core/models/verModsAuditoria.model';
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +63,7 @@ export class DataService {
     return this.response.get<Telefono[]>(environment.url_api + '/telefono/');
   }
 
+
   get_Notas_Credito(){
     return this.response.get<NotasCredito[]>(environment.url_api + '/notas_credito/');
   }
@@ -90,19 +92,48 @@ export class DataService {
     return this.response.get<Distrito[]>(environment.url_api + '/distritos/');
   }
 
-
-  //POST
-
-  agregarCliente(cliente:Cliente){
-    return this.response.post<Cliente[]>(environment.url_api + '/cliente/', cliente);
+  get_ModsAuditorias(idAuditoria:number){
+    return this.response.get<VerModAuditoria[]>(environment.url_api + '/auditoria/' + idAuditoria);
   }
 
+
+  //POST
   add_Client(cedula:string,nombre:string,email:string,codigoActividad:number,telefono:string,codDistrito:number,detalledir:string){
     let data = {cedula, nombre, email, codigoActividad, telefono, codDistrito, detalledir};
     return this.response.post(environment.url_api + '/cliente/',data);
   }
 
-  
+  add_Sucursal(nombre:string){
+    let data = {nombre};
+    return this.response.post(environment.url_api + '/sucursal/',data);
+  }
+
+  add_Actividad(nombre:string){
+    let data = {nombre};
+    return this.response.post(environment.url_api + '/actividad/',data);
+  }
+
+  add_Telefono(cedula:string,telefono:string){
+    let data = {cedula, telefono};
+    return this.response.post(environment.url_api + '/telefono/',data);
+  }
+
+  add_Auditor(cedula:string,nombre:string){
+    let data = {cedula, nombre};
+    return this.response.post(environment.url_api + '/auditor/',data);
+  }
+
+  add_Auditoria(fechaCreacion:string,idAuditor:string,codigoCuenta:number){
+    let data = {fechaCreacion,idAuditor,codigoCuenta};
+    return this.response.post(environment.url_api + '/auditoria/',data);
+  }
+
+
+  add_Abono(factura:number,monto:number,formaPago:string, docReferencia:string){
+    let data = {factura, monto, formaPago, docReferencia};
+    return this.response.post(environment.url_api + '/abonoaux/',data);
+  }
+
   constructor(private response: HttpClient) {}
 
   ngOnInit() {}

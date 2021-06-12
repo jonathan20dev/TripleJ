@@ -1,1 +1,51 @@
-<p>abonos-form works!</p>
+
+<mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Hacer un Abono</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-icon matSuffix>F</mat-icon>
+            <input matInput  maxlength="50" placeholder="Número de Factura" id="factura">
+          </mat-form-field>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput  maxlength="11" placeholder="Monto" id="monto">          
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput  maxlength="11" placeholder="Forma de pago" id="formaPago">          
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput  maxlength="11" placeholder="Documento de Referencia" id="docReferencia">          
+          </mat-form-field>
+        </div>
+      </div>
+  
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit"
+      (click)="this.validacionBotton()"
+      >Realizar Abono</button>
+    </mat-card-actions>
+  </mat-card>

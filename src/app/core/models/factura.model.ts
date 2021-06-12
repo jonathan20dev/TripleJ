@@ -1,14 +1,14 @@
 export interface Factura {
-    id: number;
+    numero: number;
     tipo: string;
+    cliente: string;
+    moneda: string;
     montoBruto: number;
-    montoImpuesto: number;
     montoDescuento: number;
+    montoImpuesto: number;
     montoNeto: number;
     notas: string;
+    actividad:string;
     fecha: string;
-    codigoActividad: number;
-    codigoSucursal: number;
-    codigoCliente: string;
-    moneda:string;
+    sucursal: string;
 }

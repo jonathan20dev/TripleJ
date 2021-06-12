@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { DataService } from 'src/app/data.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-auditoria-form',
@@ -8,40 +10,46 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class AuditoriaFormComponent implements OnInit {
 
-  clientForm = this.fb.group({
-    nombre: [null, Validators.required],
-    correo: [null, Validators.required],
-    telefono: [null, Validators.compose([
-      Validators.required, Validators.minLength(8), Validators.maxLength(12)])
-    ],
-    direccion: [null, Validators.required],
-    direccion2: null,
-    actividad: [null, Validators.required],
-    postalCode: [null, Validators.compose([
-      Validators.required, Validators.minLength(5), Validators.maxLength(5)])
-    ],
-    shipping: ['free', Validators.required]
-  });
-
-  
-
-  hasUnitNumber = false;
-
-  actividades = [
-    {name: 'Pesca'},
-    {name: 'Ganaderia'},
-    {name: 'Actividad'},
-    {name: 'Ganancia '},
-  ];
-
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private dataService:DataService ) {}
 
   onSubmit() {
-    alert('Thanks!');
+    
   }
 
-
   ngOnInit() {
+  }
+
+  async validacionBotton(){
+    const { value: clientValues } = await Swal.fire({
+      focusConfirm: false,
+      confirmButtonText:'Create',
+      preConfirm: () => {
+        return [
+          (<HTMLInputElement>document.getElementById('fechaCreacion')).value,
+          (<HTMLInputElement>document.getElementById('idAuditor')).value,
+          (<HTMLInputElement>document.getElementById('codigoCuenta')).value,
+        ]
+      }
+    })
+    if (clientValues) {
+      Swal.fire(JSON.stringify(clientValues))
+      let fechaCreacion = clientValues[0];
+      let idAuditor = clientValues[1];
+      let codigoCuenta = clientValues[2];
+      if( fechaCreacion == ""|| idAuditor == "" || codigoCuenta == ""){
+        Swal.fire(`No pueden haber elementos vacios`);
+      }
+      else{
+        console.log(clientValues);
+        this.dataService.add_Auditoria(
+          fechaCreacion,
+          idAuditor,
+          parseInt(codigoCuenta))
+          .subscribe(auditoria => {
+            console.log(auditoria)
+          })
+      }
+    }
   }
 
 }

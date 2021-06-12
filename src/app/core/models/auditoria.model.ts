@@ -1,5 +1,5 @@
 export interface Auditoria {
-    codigo: number;
+    id: number;
     fechaCreacion: string;
     idAuditor: string;
     codigoCuenta: number;

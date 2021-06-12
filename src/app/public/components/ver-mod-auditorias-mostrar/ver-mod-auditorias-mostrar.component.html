@@ -1,0 +1,27 @@
+<!--GRAND D-->
+<div class="padre">
+    <div *ngFor="let modA of this.modAuditoria" class="divCliente" >
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{"Factura: " + modA.factura  }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{  "Auditoria: " + modA.auditoria}}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Auditor: "+ modA.auditor}}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Detalle: " + modA.detalle }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-header>
+            <mat-card-subtitle>{{"Fecha: " + modA.fecha | slice:0:17 }}</mat-card-subtitle>
+            <mat-card-subtitle> <span>Hora:</span> {{modA.hora | slice:11:19 }}</mat-card-subtitle>
+          </mat-card-header>
+          </mat-card>
+    </div>
+  </div>

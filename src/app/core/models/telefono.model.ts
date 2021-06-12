@@ -1,5 +1,4 @@
 export interface Telefono {
-    cliente: string;
-    numero: string;
-    nombre: string;
+    cedula: string;
+    telefono: string;
 }
